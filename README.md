@@ -6,7 +6,7 @@ Este programa gera possiveis palavras para o jogo **Word of Wonders**.
 ## Instalação
 
 ```bash
-git clone this-repository-url
+git clone https://github.com/levyvix/word-of-wonder
 ```
 
 ## Como usar
