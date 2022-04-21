@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 # all the combinations of number_of_words words from the words list
 
 
-def find_words(n_words=5, words='AEIOU', mask=str("")):
+def find_words(n_words=5, words='AEIOU', mask = ""):
     """
     Encontra todas as combinações de n_words palavras de words
     com a máscara mask
@@ -18,7 +18,7 @@ def find_words(n_words=5, words='AEIOU', mask=str("")):
     list_of_words = []
     if mask:  # mask not empty
 
-        for i in itertools.permutations(words, int(n_words)):
+        for i in itertools.combinations(words, int(n_words)):
             count = sum(mask[j] in [i[j], '_'] for j in range(len(i)))
 
             if count == len(mask):
@@ -26,8 +26,7 @@ def find_words(n_words=5, words='AEIOU', mask=str("")):
                 list_of_words.append(''.join(i))
 
     else:  # mask is empty
-        for permutation in itertools.permutations(words, int(n_words)):
-            list_of_words.append(''.join(permutation))
+        list_of_words.extend(''.join(permutation) for permutation in itertools.combinations(words, int(n_words)))
 
     return list(dict.fromkeys(list_of_words))
 
