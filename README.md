@@ -19,18 +19,25 @@ python wow.py --help
 
 Para usar o programa:
 ```bash
-python wow.py -w [Palavra] -n [Número de palavras] -m [Máscara]
+python wow.py -w [Palavras] -n [Número de palavras] -m [Máscara]
 ``` 
 
 Exemplo:
 ```bash
-python wow.py -w "CASA" -n 4 -m "_AS_"
+python wow.py -w CASA -n 4 -m _AS_ -p
 ```
 
-Saída: (Todas as combinações onde a máscara está presente)
+Saída: (Todas as *permutações* onde a máscara está presente)
+```bash
+CASA AASC
+```
+
+Exemplo:
+```bash
+python wow.py -w CASA -n 4 -m _AS_ -c
+```
+
+Saída: (Todas as *combinações* onde a máscara está presente)
 ```bash
 CASA
-CASA
-AASC
-AASC
 ```
